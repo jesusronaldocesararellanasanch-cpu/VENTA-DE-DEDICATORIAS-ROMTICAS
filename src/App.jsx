@@ -911,16 +911,30 @@ export default function App() {
                       <Heart className={`w-4 h-4 ${isFav ? 'text-[#FF5A6F] fill-[#FF5A6F]' : ''}`} />
                     </button>
 
-                    <div className="relative aspect-[4/3] bg-slate-50 overflow-hidden">
+                    <div className="relative bg-slate-900 overflow-hidden" style={{ aspectRatio: '4/3' }}>
                       {prod.badge && (
                         <span className={`absolute top-3 left-3 z-10 text-[9px] font-extrabold uppercase text-white px-2 py-0.5 rounded-md ${prod.badgeColor}`}>
                           {prod.badge}
                         </span>
                       )}
-                      <img
-                        src={prod.image}
-                        alt={prod.title}
-                        className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                      {/* Mini iframe preview — página HTML en vivo escalada */}
+                      <iframe
+                        src={import.meta.env.BASE_URL.replace(/\/$/, '') + prod.previewHtml}
+                        title={prod.title}
+                        scrolling="no"
+                        tabIndex={-1}
+                        style={{
+                          position: 'absolute',
+                          top: 0,
+                          left: 0,
+                          width: '960px',
+                          height: '720px',
+                          transform: 'scale(0.3125)',
+                          transformOrigin: 'top left',
+                          pointerEvents: 'none',
+                          border: 'none',
+                          background: '#000',
+                        }}
                       />
                     </div>
 
