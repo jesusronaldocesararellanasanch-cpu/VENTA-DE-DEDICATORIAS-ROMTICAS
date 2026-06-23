@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Corazón Galáctico de Partículas</title>
+    <style>
+        body {
+            margin: 0;
+            overflow: hidden;
+            background-color: #000;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        canvas {
+            filter: contrast(1.2) blur(0.5px);
+        }
+    </style>
+</head>
+<body>
+
+    <canvas id="heartCanvas"></canvas>
+
+    <script>
+        const canvas = document.getElementById('heartCanvas');
+        const ctx = canvas.getContext('2d');
+
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+
+        let particles = [];
+        const particleCount = 2000;
+        const heartScale = 18;
+
+        // Función matemática del corazón
+        function getHeartPoint(t) {
+            const x = 16 * Math.pow(Math.sin(t), 3);
+            const y = -(13 * Math.cos(t) - 5 * Math.cos(2 * t) - 2 * Math.cos(3 * t) - Math.cos(4 * t));
+            return { x: x * heartScale, y: y * heartScale };
+        }
+
+        class Particle {
+            constructor() {
+                this.init();
+            }
+
+            init() {
+                // Todas nacen en el centro (punto de luz)
+                this.x = canvas.width / 2;
+                this.y = canvas.height / 2;
+                
+                // Objetivo: un punto aleatorio en la silueta del corazón
+                const t = Math.random() * Math.PI * 2;
+                const point = getHeartPoint(t);
+                this.targetX = point.x + canvas.width / 2;
+                this.targetY = point.y + canvas.height / 2;
+
+                // Velocidad explosiva
+                this.vx = (Math.random() - 0.5) * 4;
+                this.vy = (Math.random() - 0.5) * 4;
+                
+                this.accel = 0.02 + Math.random() * 0.03;
+                this.friction = 0.94;
+                this.size = Math.random() * 2 + 0.5;
+                
+                // Colores de la imagen: Rosa neón, Púrpura y Azul eléctrico
+                const colors = ['#ff00ff', '#ff007f', '#00ffff', '#bd00ff', '#ffffff'];
+                this.color = colors[Math.floor(Math.random() * colors.length)];
+                
+                this.alpha = 1;
+                this.decay = 0.005 + Math.random() * 0.01;
+            }
+
+            update() {
+                // Atracción hacia la forma del corazón
+                const dx = this.targetX - this.x;
+                const dy = this.targetY - this.y;
+                
+                this.vx += dx * this.accel;
+                this.vy += dy * this.accel;
+                
+                this.vx *= this.friction;
+                this.vy *= this.friction;
+
+                this.x += this.vx;
+                this.y += this.vy;
+
+                this.alpha -= this.decay;
+
+                if (this.alpha <= 0) {
+                    this.init(); // Reaparece en el centro al "morir"
+                }
+            }
+
+            draw() {
+                ctx.save();
+                ctx.globalAlpha = this.alpha;
+                ctx.shadowBlur = 10;
+                ctx.shadowColor = this.color;
+                ctx.fillStyle = this.color;
+                
+                // Dibujar como destellos (estrellas pequeñas)
+                ctx.beginPath();
+                ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+                ctx.fill();
+                ctx.restore();
+            }
+        }
+
+        function createCenterGlow() {
+            // El gran resplandor rosa en el centro
+            const grd = ctx.createRadialGradient(
+                canvas.width / 2, canvas.height / 2, 0, 
+                canvas.width / 2, canvas.height / 2, 40
+            );
+            grd.addColorStop(0, 'rgba(255, 255, 255, 0.9)');
+            grd.addColorStop(0.2, 'rgba(255, 0, 255, 0.5)');
+            grd.addColorStop(1, 'transparent');
+            
+            ctx.fillStyle = grd;
+            ctx.beginPath();
+            ctx.arc(canvas.width / 2, canvas.height / 2, 50, 0, Math.PI * 2);
+            ctx.fill();
+        }
+
+        function init() {
+            for (let i = 0; i < particleCount; i++) {
+                particles.push(new Particle());
+            }
+        }
+
+        function animate() {
+            // Fondo negro con rastro leve para suavidad
+            ctx.fillStyle = 'rgba(0, 0, 0, 0.15)';
+            ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+            // Dibujar el punto de luz central
+            createCenterGlow();
+
+            particles.forEach(p => {
+                p.update();
+                p.draw();
+            });
+
+            requestAnimationFrame(animate);
+        }
+
+        window.addEventListener('resize', () => {
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+            particles = [];
+            init();
+        });
+
+        init();
+        animate();
+    </script>
+</body>
+</html>

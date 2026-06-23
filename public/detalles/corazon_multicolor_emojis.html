@@ -1,0 +1,234 @@
+
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Corazón de partículas — Multicolor + Emojis</title>
+
+<style>
+  html,body{
+    margin:0;
+    height:100%;
+    overflow:hidden;
+    background:#05050a; /* Modo oscuro */
+    font-family: Inter, system-ui;
+  }
+
+  canvas{
+    position:absolute;
+    width:100%;
+    height:100%;
+    inset:0;
+  }
+
+  .emoji{
+    position:absolute;
+    font-size:22px;
+    opacity:.65;
+    pointer-events:none;
+    animation: floatUp linear infinite;
+    z-index:1; /* Behind heart */
+  }
+
+  @keyframes floatUp {
+    0%{ transform:translateY(0) scale(1); opacity:.8; }
+    100%{ transform:translateY(-220px) scale(1.6); opacity:0; }
+  }
+
+  .phrase{
+    position:absolute;
+    left:50%; top:50%;
+    transform:translate(-50%,-50%) scale(.9);
+    color:#fff;
+    font-size:22px;
+    font-weight:700;
+    opacity:0;
+    z-index:30;
+    transition:opacity .4s ease, transform .4s ease;
+    text-shadow:0 0 20px rgba(255,255,255,.4);
+  }
+</style>
+</head>
+
+<body>
+
+<canvas id="c"></canvas>
+<div id="phrase" class="phrase"></div>
+
+<script>
+// EMOTICONS (in background)
+const emojis = ["💖","💘","💝","💗","💕","💞","💓","✨","🌸","💫","🌟","❤️"];
+function spawnEmoji(){
+  const e=document.createElement("div");
+  e.className="emoji";
+  e.innerText=emojis[Math.floor(Math.random()*emojis.length)];
+  e.style.left=Math.random()*innerWidth+"px";
+  e.style.top=innerHeight+"px";
+  e.style.animationDuration=(4+Math.random()*4)+"s";
+  document.body.appendChild(e);
+  setTimeout(()=>e.remove(),6000);
+}
+// Few elegant emojis
+setInterval(spawnEmoji,800);
+
+// Original phrases
+const phrases = [
+  "Amor propio en modo avión ✨",
+  "Late fuerte, vive ligero.",
+  "Donde va el corazón, va la historia.",
+  "Haz que tu pulso valga la pena.",
+  "Corazón con Wi-Fi para buenas vibras.",
+  "No busques media naranja: sé naranja entera.",
+  "Amar no es perderse, es encontrarse.",
+  "El latido que se escucha cambia el mundo."
+];
+
+const phraseDiv = document.getElementById("phrase");
+function popText(x,y){
+  phraseDiv.innerText = phrases[Math.floor(Math.random()*phrases.length)];
+  phraseDiv.style.left = x+"px";
+  phraseDiv.style.top = y+"px";
+  phraseDiv.style.opacity = 1;
+  phraseDiv.style.transform = "translate(-50%,-50%) scale(1.15)";
+  setTimeout(()=>{
+    phraseDiv.style.opacity = 0;
+    phraseDiv.style.transform = "translate(-50%,-50%) scale(0.85)";
+  },900);
+}
+
+// CANVAS original + multicolor modification
+const canvas = document.getElementById("c");
+const ctx = canvas.getContext("2d", { alpha:true });
+let W = canvas.width = innerWidth;
+let H = canvas.height = innerHeight;
+let DPR = window.devicePixelRatio||1;
+canvas.width = W*DPR; canvas.height=H*DPR; ctx.scale(DPR,DPR);
+
+window.onresize=()=>{
+  W=innerWidth; H=innerHeight;
+  canvas.width=W*DPR; canvas.height=H*DPR;
+  canvas.style.width=W+"px"; canvas.style.height=H+"px";
+  ctx.setTransform(DPR,0,0,DPR,0,0);
+};
+
+// HEART MATH
+function heartXY(t,scale=15){
+  return {
+    x:16*Math.pow(Math.sin(t),3)*scale,
+    y:-(13*Math.cos(t)-5*Math.cos(2*t)-2*Math.cos(3*t)-Math.cos(4*t))*scale
+  };
+}
+
+// ORIGINAL PARTICLE SYSTEM — MODIFIED TO MULTICOLOR
+let particles=[];
+let total = 900;
+let center = {x:W/2, y:H/2+10};
+let baseScale = Math.min(12, Math.max(7, Math.min(W,H)/60));
+
+for(let i=0;i<total;i++){
+  let t = (i/total)*Math.PI*2;
+  let pos = heartXY(t, baseScale);
+  let x = center.x + pos.x + (Math.random()-.5)*10;
+  let y = center.y + pos.y + (Math.random()-.5)*10;
+  particles.push({
+    ox:x, oy:y,
+    x:x+(Math.random()-.5)*40,
+    y:y+(Math.random()-.5)*40,
+    vx:(Math.random()-.5)*1,
+    vy:(Math.random()-.5)*1,
+    size:Math.random()*1.8+1,
+    hue:Math.random()*360, // ✅ RANDOM MULTICOLOR
+    attached:true,
+    noise:Math.random()*1000
+  });
+}
+
+let t=0, last=performance.now();
+let pointer={x:-999,y:-999};
+
+function loop(now){
+  let dt = now-last; last=now;
+  t += dt/1000;
+
+  ctx.clearRect(0,0,W,H);
+
+  let pulse = 1 + 0.06*Math.sin(t*4);
+
+  // Glow behind heart
+  ctx.beginPath();
+  ctx.fillStyle="rgba(255,255,255,0.05)";
+  ctx.ellipse(center.x, center.y, baseScale*30*pulse, baseScale*20*pulse, 0,0,Math.PI*2);
+  ctx.fill();
+
+  // UPDATE PARTICLES
+  for(let p of particles){
+
+    let ax = (p.ox - p.x)*0.06*(p.attached?1:0.1);
+    let ay = (p.oy - p.y)*0.06*(p.attached?1:0.1);
+
+    p.vx += ax + Math.cos((t+p.noise)*1.2)*0.05;
+    p.vy += ay + Math.sin((t+p.noise)*1.1)*0.05;
+
+    // pointer repulsion
+    let dx = p.x-pointer.x, dy=p.y-pointer.y;
+    let d = Math.hypot(dx,dy);
+    if(d<140){
+      let f=(140-d)/140;
+      p.vx += (dx/d)*f*4;
+      p.vy += (dy/d)*f*4;
+    }
+
+    p.vx*=0.92; p.vy*=0.92;
+    p.x+=p.vx; p.y+=p.vy;
+
+    let s=p.size*(1+0.25*Math.sin(t*3+p.noise));
+    ctx.beginPath();
+    let g=ctx.createRadialGradient(p.x,p.y,0,p.x,p.y,s*6);
+    g.addColorStop(0,`hsla(${p.hue},100%,70%,1)`);
+    g.addColorStop(1,`hsla(${p.hue},100%,50%,0)`);
+    ctx.fillStyle=g;
+    ctx.arc(p.x,p.y,s,0,Math.PI*2);
+    ctx.fill();
+  }
+
+  // outline
+  ctx.save(); ctx.globalCompositeOperation="lighter";
+  ctx.strokeStyle="rgba(255,255,255,0.12)";
+  ctx.lineWidth=2;
+  ctx.beginPath();
+  let steps=180;
+  for(let i=0;i<=steps;i++){
+    let tt=(i/steps)*Math.PI*2;
+    let pos=heartXY(tt,baseScale*pulse);
+    let X=center.x+pos.x, Y=center.y+pos.y;
+    if(i===0)ctx.moveTo(X,Y); else ctx.lineTo(X,Y);
+  }
+  ctx.stroke(); ctx.restore();
+
+  requestAnimationFrame(loop);
+}
+requestAnimationFrame(loop);
+
+// CLICK
+addEventListener("click", e=>{
+  pointer.x=e.clientX; pointer.y=e.clientY;
+  popText(e.clientX,e.clientY);
+
+  for(let p of particles){
+    let dx=p.x-e.clientX, dy=p.y-e.clientY;
+    let d=Math.hypot(dx,dy);
+    if(d<200){
+      p.vx += (dx/d)*6;
+      p.vy += (dy/d)*6;
+      p.attached=false;
+      setTimeout(()=>p.attached=true,1500+Math.random()*1000);
+    }
+  }
+});
+addEventListener("mousemove", e=>{
+  pointer.x=e.clientX; pointer.y=e.clientY;
+});
+</script>
+</body>
+</html>
