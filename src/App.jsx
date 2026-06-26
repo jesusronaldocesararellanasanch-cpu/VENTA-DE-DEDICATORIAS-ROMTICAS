@@ -114,22 +114,6 @@ const OCCASIONS = [
 
 const PRODUCTS = [
   {
-    id: 1,
-    category: 'VIDEO',
-    title: 'Corazón Galáctico de Partículas',
-    rating: 5.0,
-    reviews: 150,
-    price: 29.90,
-    originalPrice: 49.90,
-    image: '/detalles/CORAZONVIRAL.png',
-    badge: 'MÁS VENDIDO',
-    badgeColor: 'bg-[#FF5A6F]',
-    previewHtml: 'https://jesusronaldocesararellanasanch-cpu.github.io/CORAZONVIRAL/',
-    isVIP: true,
-    date: '20/6/2026',
-    description: 'Espectacular animación de partículas que forman un corazón galáctico en pantalla completa. Incluye efectos de luz, música romántica y personalización con el nombre de tu pareja. Un detalle visual 100% único e irrepetible.'
-  },
-  {
     id: 2,
     category: '3D ROMÁNTICO',
     title: '3D I Love You Animado',
@@ -224,22 +208,6 @@ const PRODUCTS = [
     isVIP: true,
     date: '17/6/2026',
     description: 'El corazón de partículas más viral de la plataforma. Lluvia de frases románticas, partículas interactivas y efectos de luz imposibles de ignorar. El favorito de nuestros clientes VIP.'
-  },
-  {
-    id: 8,
-    category: 'CORAZONES',
-    title: 'Corazón Viral Genial Premium',
-    rating: 5.0,
-    reviews: 175,
-    price: 22.90,
-    originalPrice: 39.90,
-    image: '/detalles/Corazon_Viral_Genial_Premium.png',
-    badge: 'PREMIUM',
-    badgeColor: 'bg-amber-600',
-    previewHtml: 'https://jesusronaldocesararellanasanch-cpu.github.io/Corazon_Viral_Genial_Premium/',
-    isVIP: true,
-    date: '16/6/2026',
-    description: 'Versión premium y exclusiva del Corazón Viral Genial. Efectos visuales mejorados, paleta de colores personalizable, frases VIP y acceso al código fuente editable para máxima personalización.'
   },
   {
     id: 9,
@@ -425,150 +393,6 @@ function CountdownTimer() {
   )
 }
 
-/* ═══════════════════════════════════════════════════════════
-   ProductDetailView — Vista de detalle de producto
-   Overlay fullscreen: fondo oscuro, tarjeta con glow cian,
-   botones neón (cian/verde) y badge VIP/Gratis.
-═══════════════════════════════════════════════════════════ */
-function ProductDetailView({ product, onClose, onVIP, onPreview }) {
-  const baseUrl = import.meta.env.BASE_URL.replace(/\/$/, '')
-
-  const handleViewCode = () => {
-    const targetUrl = product.previewHtml.startsWith('http') ? product.previewHtml : baseUrl + product.previewHtml;
-    if (product.isVIP) { onVIP(product) }
-    else { onPreview(targetUrl) }
-  }
-  const handleDownload = () => {
-    const targetUrl = product.previewHtml.startsWith('http') ? product.previewHtml : baseUrl + product.previewHtml;
-    if (product.isVIP) { onVIP(product) }
-    else { window.open(targetUrl, '_blank') }
-  }
-  const handleShare = () => {
-    if (product.isVIP) { onVIP(product) }
-    else {
-      const msg = `¡Mira este detalle digital! 💝 ${product.title} — Solo S/ ${product.price.toFixed(2)}\nEncuéntralo en: Detalles que Enamoran ❤️`
-      window.open(`https://wa.me/?text=${encodeURIComponent(msg)}`, '_blank')
-    }
-  }
-  const discount = Math.round((1 - product.price / product.originalPrice) * 100)
-
-  return (
-    <div className="fixed inset-0 z-[55] bg-slate-950 overflow-y-auto animate-fade-in-up">
-      {/* ── Barra superior sticky ── */}
-      <div className="sticky top-0 z-10 bg-slate-950/90 backdrop-blur-md border-b border-slate-800/60 px-4 py-3">
-        <div className="max-w-2xl mx-auto">
-          <button
-            onClick={onClose}
-            className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-slate-700 hover:border-slate-500 text-slate-300 hover:text-white text-sm font-semibold transition-all"
-          >
-            <ChevronLeft className="w-4 h-4" />
-            Volver al catálogo
-          </button>
-        </div>
-      </div>
-
-      {/* ── Contenido ── */}
-      <div className="max-w-2xl mx-auto px-4 py-8">
-        {/* Tarjeta oscura con borde cian */}
-        <div className="bg-slate-900 border border-cyan-900/50 rounded-3xl overflow-hidden shadow-[0_0_40px_rgba(6,182,212,0.07)]">
-
-          {/* Cabecera: icono + título + badge */}
-          <div className="flex items-start justify-between gap-3 px-6 pt-6 pb-5">
-            <div className="flex items-center gap-3 flex-1 min-w-0">
-              <span className="text-2xl shrink-0">📁</span>
-              <div>
-                <span className="text-[10px] font-extrabold text-cyan-500 uppercase tracking-widest block">{product.category}</span>
-                <h1 className="font-bold text-white text-lg leading-snug mt-0.5">{product.title}</h1>
-              </div>
-            </div>
-            {product.isVIP ? (
-              <span className="inline-flex items-center gap-1 px-3 py-1.5 rounded-full bg-amber-500/10 border border-amber-500/30 text-amber-400 text-xs font-bold shrink-0 shadow-[0_0_12px_rgba(234,179,8,0.2)]">
-                💎 VIP
-              </span>
-            ) : (
-              <span className="inline-flex items-center gap-1 px-3 py-1.5 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 text-xs font-bold shrink-0 shadow-[0_0_12px_rgba(34,197,94,0.2)]">
-                🎁 Gratis
-              </span>
-            )}
-          </div>
-
-          {/* ── Vista previa: iframe live (ahora siempre visible) ── */}
-          <div className="mx-6 rounded-2xl overflow-hidden border border-slate-700/50 bg-slate-950 relative" style={{ height: '340px' }}>
-            <iframe
-              src={product.previewHtml.startsWith('http') ? product.previewHtml : baseUrl + product.previewHtml}
-              title={`Vista previa interactiva: ${product.title}`}
-              className="w-full h-full border-0"
-              allow="autoplay"
-              loading="lazy"
-            />
-          </div>
-
-          {/* Metadatos */}
-          <div className="px-6 pt-4 flex flex-wrap items-center gap-4">
-            <span className="flex items-center gap-1.5 text-xs text-slate-400 font-medium">📅 {product.date}</span>
-            <span className="flex items-center gap-1.5 text-xs text-slate-400 font-medium">
-              <span className="text-cyan-500 font-mono text-[11px]">&lt;/&gt;</span> HTML descargable
-            </span>
-            <span className="flex items-center gap-1.5 text-xs text-slate-400 font-medium">
-              <Star className="w-3 h-3 text-amber-400 fill-amber-400" /> {product.rating} ({product.reviews} reseñas)
-            </span>
-          </div>
-
-          {/* Descripción */}
-          <div className="px-6 pt-3 pb-4">
-            <p className="text-slate-300 text-sm leading-relaxed">{product.description}</p>
-          </div>
-
-          {/* Precio */}
-          <div className="px-6 pb-5 flex items-baseline gap-2">
-            <span className="text-2xl font-black text-white">S/ {product.price.toFixed(2)}</span>
-            <span className="text-sm text-slate-500 line-through">S/ {product.originalPrice.toFixed(2)}</span>
-            <span className="text-xs font-bold text-emerald-400 ml-1">{discount}% OFF</span>
-          </div>
-
-          {/* Divisor */}
-          <div className="mx-6 border-t border-slate-800 mb-5" />
-
-          {/* ── Botones Neón ── */}
-          <div className="px-6 pb-6 space-y-3">
-            {/* Botón principal: abrir pantalla completa (gratis) o desbloquear VIP */}
-            <button
-              onClick={handleViewCode}
-              className="w-full py-3.5 rounded-2xl border border-cyan-500/70 bg-cyan-500/5 text-cyan-400 font-bold text-sm tracking-wide flex items-center justify-center gap-2 transition-all duration-200 hover:bg-cyan-500/15 hover:border-cyan-400 shadow-[0_0_15px_rgba(6,182,212,0.2)] hover:shadow-[0_0_28px_rgba(6,182,212,0.45)]"
-            >
-              <span className="font-mono">&lt;/&gt;</span>
-              {product.isVIP ? 'ADQUIRIR CÓDIGO FUENTE' : 'ABRIR PANTALLA COMPLETA'}
-              {product.isVIP && <Lock className="w-3.5 h-3.5 opacity-50" />}
-            </button>
-
-            {/* DESCARGAR HTML — verde */}
-            <button
-              onClick={handleDownload}
-              className="w-full py-3.5 rounded-2xl border border-emerald-500/70 bg-emerald-500/5 text-emerald-400 font-bold text-sm tracking-wide flex items-center justify-center gap-2 transition-all duration-200 hover:bg-emerald-500/15 hover:border-emerald-400 shadow-[0_0_15px_rgba(34,197,94,0.2)] hover:shadow-[0_0_28px_rgba(34,197,94,0.45)]"
-            >
-              ↓ DESCARGAR HTML
-              {product.isVIP && <Lock className="w-3.5 h-3.5 opacity-50" />}
-            </button>
-
-            {/* COMPARTIR — verde WhatsApp */}
-            <button
-              onClick={handleShare}
-              className="w-full py-3.5 rounded-2xl border border-emerald-500/70 bg-emerald-600/10 text-emerald-400 font-bold text-sm tracking-wide flex items-center justify-center gap-2 transition-all duration-200 hover:bg-emerald-600/20 hover:border-emerald-400 shadow-[0_0_15px_rgba(34,197,94,0.2)] hover:shadow-[0_0_28px_rgba(34,197,94,0.45)]"
-            >
-              <MessageCircle className="w-4 h-4" /> COMPARTIR
-            </button>
-          </div>
-        </div>
-
-        {/* Rating debajo de la tarjeta */}
-        <div className="mt-6 flex items-center justify-center gap-1.5">
-          {[...Array(5)].map((_, i) => <Star key={i} className="w-3.5 h-3.5 fill-amber-400 text-amber-400" />)}
-          <span className="text-slate-500 text-xs ml-1">{product.rating}/5 — {product.reviews} clientes satisfechos</span>
-        </div>
-      </div>
-    </div>
-  )
-}
 
 /* ═══════════════════════════════════════════════════════════
    VIPModal — Modal de Acceso Premium VIP
@@ -654,7 +478,6 @@ export default function App() {
   const [favoritesOpen, setFavoritesOpen] = useState(false)
 
   // Vista de detalle y modal VIP
-  const [detailProduct, setDetailProduct] = useState(null)
   const [vipModalProduct, setVipModalProduct] = useState(null)
 
   // Page loading states
@@ -804,8 +627,12 @@ export default function App() {
   }
 
   // Detalle de producto y modal VIP
-  const handleOpenProductDetail = (prod) => setDetailProduct(prod)
-  const handleCloseProductDetail = () => setDetailProduct(null)
+  const handleOpenProductDetail = (prod) => {
+    const targetUrl = prod.previewHtml.startsWith('http') 
+      ? prod.previewHtml 
+      : import.meta.env.BASE_URL.replace(/\/$/, '') + prod.previewHtml;
+    window.location.href = targetUrl;
+  }
   const handleOpenVIPModal = (prod) => setVipModalProduct(prod)
   const handleCloseVIPModal = () => setVipModalProduct(null)
 
@@ -2394,15 +2221,6 @@ export default function App() {
             </div>
           </div>
         </div>
-      )}
-      {/* ── Vista de Detalle del Producto ── */}
-      {detailProduct && (
-        <ProductDetailView
-          product={detailProduct}
-          onClose={handleCloseProductDetail}
-          onVIP={handleOpenVIPModal}
-          onPreview={setPreviewImage}
-        />
       )}
 
       {/* ── Modal de Acceso Premium VIP ── */}
