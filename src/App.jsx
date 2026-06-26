@@ -121,10 +121,13 @@ const PRODUCTS = [
     reviews: 150,
     price: 29.90,
     originalPrice: 49.90,
-    image: 'https://images.unsplash.com/photo-1518199266791-5375a83190b7?auto=format&fit=crop&w=600&q=80',
+    image: '/detalles/CORAZONVIRAL.png',
     badge: 'MÁS VENDIDO',
     badgeColor: 'bg-[#FF5A6F]',
-    previewHtml: '/detalles/CORAZONVIRAL (1).html',
+    previewHtml: 'https://jesusronaldocesararellanasanch-cpu.github.io/CORAZONVIRAL/',
+    isVIP: true,
+    date: '20/6/2026',
+    description: 'Espectacular animación de partículas que forman un corazón galáctico en pantalla completa. Incluye efectos de luz, música romántica y personalización con el nombre de tu pareja. Un detalle visual 100% único e irrepetible.'
   },
   {
     id: 2,
@@ -134,10 +137,13 @@ const PRODUCTS = [
     reviews: 98,
     price: 24.90,
     originalPrice: 39.90,
-    image: 'https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?auto=format&fit=crop&w=600&q=80',
+    image: '/detalles/3D_I_LOVE_YOU.png',
     badge: 'EXCLUSIVO',
     badgeColor: 'bg-amber-500',
-    previewHtml: '/detalles/3D_I_LOVE_YOU.html',
+    previewHtml: 'https://jesusronaldocesararellanasanch-cpu.github.io/3D_I_LOVE_YOU/',
+    isVIP: true,
+    date: '18/6/2026',
+    description: 'Texto 3D animado «I Love You» con rotación y brillos exclusivos. El diseño más moderno de nuestra colección, perfecto para aniversarios y declaraciones de amor que impactan de verdad.'
   },
   {
     id: 3,
@@ -147,10 +153,13 @@ const PRODUCTS = [
     reviews: 114,
     price: 14.90,
     originalPrice: 29.90,
-    image: 'https://images.unsplash.com/photo-1518895949257-7621c3c786d7?auto=format&fit=crop&w=600&q=80',
+    image: '/detalles/angel.png',
     badge: 'NUEVO',
     badgeColor: 'bg-emerald-500',
-    previewHtml: '/detalles/Angel_.html',
+    previewHtml: 'https://jesusronaldocesararellanasanch-cpu.github.io/Angel/',
+    isVIP: false,
+    date: '15/6/2026',
+    description: 'Dedicatoria romántica con ángel de amor personalizado. Incluye nombre del destinatario, mensaje especial y fondo musical suave. Ideal para sorprender a tu persona favorita con algo realmente especial.'
   },
   {
     id: 4,
@@ -160,10 +169,13 @@ const PRODUCTS = [
     reviews: 207,
     price: 34.90,
     originalPrice: 59.90,
-    image: 'https://images.unsplash.com/photo-1512418490979-92798cec1380?auto=format&fit=crop&w=600&q=80',
+    image: '/detalles/Buenos-dias.png',
     badge: 'LA PREFERIDA',
     badgeColor: 'bg-indigo-500',
-    previewHtml: '/detalles/Buenos dias.html',
+    previewHtml: 'https://jesusronaldocesararellanasanch-cpu.github.io/Buenos-dias/',
+    isVIP: true,
+    date: '20/6/2026',
+    description: 'El saludo matutino más especial para despertar a esa persona única. Animación de amaneceres, corazones flotantes y mensaje personalizado que hará que su día comience con la mejor sonrisa.'
   },
   {
     id: 5,
@@ -173,10 +185,13 @@ const PRODUCTS = [
     reviews: 132,
     price: 19.90,
     originalPrice: 34.90,
-    image: 'https://images.unsplash.com/photo-1516589178581-6cd7833ae3b2?auto=format&fit=crop&w=600&q=80',
+    image: '/detalles/Contador-de-Fechas-Especiales.png',
     badge: 'ESPECIAL',
     badgeColor: 'bg-violet-500',
-    previewHtml: '/detalles/Contador-de-Fechas-Especiales.html',
+    previewHtml: 'https://jesusronaldocesararellanasanch-cpu.github.io/Contador-de-Fechas-Especiales/',
+    isVIP: true,
+    date: '19/6/2026',
+    description: 'Contador regresivo interactivo para fechas especiales: aniversarios, cumpleaños, bodas. Muestra días, horas, minutos y segundos con un diseño romántico completamente personalizable.'
   },
   {
     id: 6,
@@ -186,10 +201,13 @@ const PRODUCTS = [
     reviews: 89,
     price: 12.90,
     originalPrice: 24.90,
-    image: 'https://images.unsplash.com/photo-1492684223066-81342ee5ff30?auto=format&fit=crop&w=600&q=80',
+    image: '/detalles/corazon_multicolor_emojis.png',
     badge: 'VIRAL',
     badgeColor: 'bg-pink-500',
-    previewHtml: '/detalles/corazon_multicolor_emojis.html',
+    previewHtml: 'https://jesusronaldocesararellanasanch-cpu.github.io/corazon_multicolor_emojis/',
+    isVIP: false,
+    date: '14/6/2026',
+    description: 'Corazón animado con explosión de emojis y colores vibrantes. Divertido, viral y perfecto para compartir en redes. Personaliza los emojis y el mensaje central a tu gusto.'
   },
   {
     id: 7,
@@ -199,10 +217,13 @@ const PRODUCTS = [
     reviews: 203,
     price: 17.90,
     originalPrice: 29.90,
-    image: 'https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?auto=format&fit=crop&w=600&q=80',
+    image: '/detalles/Corazon_Viral_Genial.png',
     badge: 'TOP',
     badgeColor: 'bg-rose-500',
-    previewHtml: '/detalles/Corazon_Viral_Genial.html',
+    previewHtml: 'https://jesusronaldocesararellanasanch-cpu.github.io/Corazon_Viral_Genial/',
+    isVIP: true,
+    date: '17/6/2026',
+    description: 'El corazón de partículas más viral de la plataforma. Lluvia de frases románticas, partículas interactivas y efectos de luz imposibles de ignorar. El favorito de nuestros clientes VIP.'
   },
   {
     id: 8,
@@ -212,10 +233,13 @@ const PRODUCTS = [
     reviews: 175,
     price: 22.90,
     originalPrice: 39.90,
-    image: 'https://images.unsplash.com/photo-1518199266791-5375a83190b7?auto=format&fit=crop&w=600&q=80',
+    image: '/detalles/Corazon_Viral_Genial_Premium.png',
     badge: 'PREMIUM',
     badgeColor: 'bg-amber-600',
-    previewHtml: '/detalles/Corazon_Viral_Genial (1).html',
+    previewHtml: 'https://jesusronaldocesararellanasanch-cpu.github.io/Corazon_Viral_Genial_Premium/',
+    isVIP: true,
+    date: '16/6/2026',
+    description: 'Versión premium y exclusiva del Corazón Viral Genial. Efectos visuales mejorados, paleta de colores personalizable, frases VIP y acceso al código fuente editable para máxima personalización.'
   },
   {
     id: 9,
@@ -225,10 +249,93 @@ const PRODUCTS = [
     reviews: 161,
     price: 15.90,
     originalPrice: 27.90,
-    image: 'https://images.unsplash.com/photo-1518895949257-7621c3c786d7?auto=format&fit=crop&w=600&q=80',
+    image: '/detalles/corazones-con-frases.png',
     badge: 'ROMÁNTICO',
-    badgeColor: 'bg-red-500',
-    previewHtml: '/detalles/corazonesconfrases.html',
+    badgeColor: 'bg-rose-600',
+    previewHtml: 'https://jesusronaldocesararellanasanch-cpu.github.io/corazones-con-frases/',
+    isVIP: false,
+    date: '13/6/2026',
+    description: 'Lluvia de corazones interactivos. Al hacer clic, revelan frases de amor hermosas de forma aleatoria. Perfecto para enviar un mensaje tierno y directo al corazón.'
+  },
+  {
+    id: 10,
+    category: 'DEDICATORIAS',
+    title: 'Vitaminas del Amor',
+    rating: 5.0,
+    reviews: 145,
+    price: 19.90,
+    originalPrice: 35.90,
+    image: '/detalles/Vitaminas del Amor.png',
+    badge: 'NUEVO',
+    badgeColor: 'bg-emerald-500',
+    previewHtml: 'https://jesusronaldocesararellanasanch-cpu.github.io/Vitaminas-del-Amor/',
+    isVIP: false,
+    date: '25/6/2026',
+    description: 'Una dosis diaria de amor con este frasco virtual de vitaminas. Cada píldora revela un mensaje dulce para alegrar el día de tu persona especial.'
+  },
+  {
+    id: 11,
+    category: '3D ROMÁNTICO',
+    title: 'Corazón Molecular 3D',
+    rating: 5.0,
+    reviews: 210,
+    price: 29.90,
+    originalPrice: 49.90,
+    image: '/detalles/Coraz-n-Molecular-3D.png',
+    badge: 'EXCLUSIVO',
+    badgeColor: 'bg-amber-500',
+    previewHtml: 'https://jesusronaldocesararellanasanch-cpu.github.io/Coraz-n-Molecular-3D/',
+    isVIP: true,
+    date: '25/6/2026',
+    description: 'Un fascinante corazón 3D formado por conexiones moleculares que giran interactivamente. Perfecto para demostrar que su amor es pura química.'
+  },
+  {
+    id: 12,
+    category: 'SALUDO',
+    title: 'Feliz Día del Futbolista',
+    rating: 4.9,
+    reviews: 95,
+    price: 14.90,
+    originalPrice: 24.90,
+    image: '/detalles/Feliz-D-a-del-Futbolista.png',
+    badge: 'ESPECIAL',
+    badgeColor: 'bg-violet-500',
+    previewHtml: 'https://jesusronaldocesararellanasanch-cpu.github.io/Feliz-D-a-del-Futbolista/',
+    isVIP: false,
+    date: '25/6/2026',
+    description: 'Dedicatoria especial para celebrar el Día del Futbolista. Animación dinámica con temática de fútbol para tu deportista favorito.'
+  },
+  {
+    id: 13,
+    category: 'DEDICATORIAS',
+    title: 'Flores Para ti Amor',
+    rating: 5.0,
+    reviews: 178,
+    price: 24.90,
+    originalPrice: 39.90,
+    image: '/detalles/Flores-Para-ti-Amor.png',
+    badge: 'MÁS VENDIDO',
+    badgeColor: 'bg-[#FF5A6F]',
+    previewHtml: 'https://jesusronaldocesararellanasanch-cpu.github.io/Flores-Para-ti-Amor/',
+    isVIP: true,
+    date: '25/6/2026',
+    description: 'Un hermoso arreglo floral digital animado con dedicatoria romántica. Flores que nunca se marchitan, justo como tu amor.'
+  },
+  {
+    id: 14,
+    category: 'ESPECIAL',
+    title: 'Propuesta Eterna',
+    rating: 5.0,
+    reviews: 342,
+    price: 49.90,
+    originalPrice: 79.90,
+    image: '/detalles/Propuesta-Eterna.png',
+    badge: 'PREMIUM',
+    badgeColor: 'bg-amber-600',
+    previewHtml: 'https://jesusronaldocesararellanasanch-cpu.github.io/Propuesta-Eterna/',
+    isVIP: true,
+    date: '25/6/2026',
+    description: 'La forma más original y moderna de hacer una propuesta inolvidable. Animación elegante que culmina con la gran pregunta.'
   },
 ]
 
@@ -269,6 +376,260 @@ const TESTIMONIALS = [
   }
 ]
 
+/* ─────────────────────────────────────────────────────────
+   OPTIMIZACIÓN 2 — CountdownTimer aislado
+   El estado del contador vive AQUÍ, fuera de App,
+   para que solo este pequeño componente se re-renderice
+   cada segundo y no toda la página.
+───────────────────────────────────────────────────────── */
+function CountdownTimer() {
+  const [hours, setHours] = useState(23)
+  const [minutes, setMinutes] = useState(58)
+  const [seconds, setSeconds] = useState(45)
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setSeconds(prev => {
+        if (prev > 0) return prev - 1
+        setMinutes(m => {
+          if (m > 0) return m - 1
+          setHours(h => (h > 0 ? h - 1 : 23))
+          return 59
+        })
+        return 59
+      })
+    }, 1000)
+    return () => clearInterval(timer)
+  }, [])
+
+  return (
+    <div className="flex items-center space-x-3.5">
+      {/* Hours */}
+      <div className="flex flex-col items-center">
+        <div className="w-14 h-14 bg-white border border-slate-150 rounded-2xl flex items-center justify-center font-black text-xl text-slate-800 shadow-sm leading-none">{hours}</div>
+        <span className="text-[9px] font-extrabold text-slate-400 mt-1 uppercase tracking-wider">HORAS</span>
+      </div>
+      <span className="font-extrabold text-slate-400 text-xl leading-none -mt-4">:</span>
+      {/* Minutes */}
+      <div className="flex flex-col items-center">
+        <div className="w-14 h-14 bg-white border border-slate-150 rounded-2xl flex items-center justify-center font-black text-xl text-slate-800 shadow-sm leading-none">{minutes}</div>
+        <span className="text-[9px] font-extrabold text-slate-400 mt-1 uppercase tracking-wider">MINUTOS</span>
+      </div>
+      <span className="font-extrabold text-slate-400 text-xl leading-none -mt-4">:</span>
+      {/* Seconds */}
+      <div className="flex flex-col items-center">
+        <div className="w-14 h-14 bg-white border border-slate-150 rounded-2xl flex items-center justify-center font-black text-xl text-slate-800 shadow-sm leading-none">{seconds}</div>
+        <span className="text-[9px] font-extrabold text-slate-400 mt-1 uppercase tracking-wider">SEGUNDOS</span>
+      </div>
+    </div>
+  )
+}
+
+/* ═══════════════════════════════════════════════════════════
+   ProductDetailView — Vista de detalle de producto
+   Overlay fullscreen: fondo oscuro, tarjeta con glow cian,
+   botones neón (cian/verde) y badge VIP/Gratis.
+═══════════════════════════════════════════════════════════ */
+function ProductDetailView({ product, onClose, onVIP, onPreview }) {
+  const baseUrl = import.meta.env.BASE_URL.replace(/\/$/, '')
+
+  const handleViewCode = () => {
+    const targetUrl = product.previewHtml.startsWith('http') ? product.previewHtml : baseUrl + product.previewHtml;
+    if (product.isVIP) { onVIP(product) }
+    else { onPreview(targetUrl) }
+  }
+  const handleDownload = () => {
+    const targetUrl = product.previewHtml.startsWith('http') ? product.previewHtml : baseUrl + product.previewHtml;
+    if (product.isVIP) { onVIP(product) }
+    else { window.open(targetUrl, '_blank') }
+  }
+  const handleShare = () => {
+    if (product.isVIP) { onVIP(product) }
+    else {
+      const msg = `¡Mira este detalle digital! 💝 ${product.title} — Solo S/ ${product.price.toFixed(2)}\nEncuéntralo en: Detalles que Enamoran ❤️`
+      window.open(`https://wa.me/?text=${encodeURIComponent(msg)}`, '_blank')
+    }
+  }
+  const discount = Math.round((1 - product.price / product.originalPrice) * 100)
+
+  return (
+    <div className="fixed inset-0 z-[55] bg-slate-950 overflow-y-auto animate-fade-in-up">
+      {/* ── Barra superior sticky ── */}
+      <div className="sticky top-0 z-10 bg-slate-950/90 backdrop-blur-md border-b border-slate-800/60 px-4 py-3">
+        <div className="max-w-2xl mx-auto">
+          <button
+            onClick={onClose}
+            className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-slate-700 hover:border-slate-500 text-slate-300 hover:text-white text-sm font-semibold transition-all"
+          >
+            <ChevronLeft className="w-4 h-4" />
+            Volver al catálogo
+          </button>
+        </div>
+      </div>
+
+      {/* ── Contenido ── */}
+      <div className="max-w-2xl mx-auto px-4 py-8">
+        {/* Tarjeta oscura con borde cian */}
+        <div className="bg-slate-900 border border-cyan-900/50 rounded-3xl overflow-hidden shadow-[0_0_40px_rgba(6,182,212,0.07)]">
+
+          {/* Cabecera: icono + título + badge */}
+          <div className="flex items-start justify-between gap-3 px-6 pt-6 pb-5">
+            <div className="flex items-center gap-3 flex-1 min-w-0">
+              <span className="text-2xl shrink-0">📁</span>
+              <div>
+                <span className="text-[10px] font-extrabold text-cyan-500 uppercase tracking-widest block">{product.category}</span>
+                <h1 className="font-bold text-white text-lg leading-snug mt-0.5">{product.title}</h1>
+              </div>
+            </div>
+            {product.isVIP ? (
+              <span className="inline-flex items-center gap-1 px-3 py-1.5 rounded-full bg-amber-500/10 border border-amber-500/30 text-amber-400 text-xs font-bold shrink-0 shadow-[0_0_12px_rgba(234,179,8,0.2)]">
+                💎 VIP
+              </span>
+            ) : (
+              <span className="inline-flex items-center gap-1 px-3 py-1.5 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 text-xs font-bold shrink-0 shadow-[0_0_12px_rgba(34,197,94,0.2)]">
+                🎁 Gratis
+              </span>
+            )}
+          </div>
+
+          {/* ── Vista previa: iframe live (ahora siempre visible) ── */}
+          <div className="mx-6 rounded-2xl overflow-hidden border border-slate-700/50 bg-slate-950 relative" style={{ height: '340px' }}>
+            <iframe
+              src={product.previewHtml.startsWith('http') ? product.previewHtml : baseUrl + product.previewHtml}
+              title={`Vista previa interactiva: ${product.title}`}
+              className="w-full h-full border-0"
+              allow="autoplay"
+              loading="lazy"
+            />
+          </div>
+
+          {/* Metadatos */}
+          <div className="px-6 pt-4 flex flex-wrap items-center gap-4">
+            <span className="flex items-center gap-1.5 text-xs text-slate-400 font-medium">📅 {product.date}</span>
+            <span className="flex items-center gap-1.5 text-xs text-slate-400 font-medium">
+              <span className="text-cyan-500 font-mono text-[11px]">&lt;/&gt;</span> HTML descargable
+            </span>
+            <span className="flex items-center gap-1.5 text-xs text-slate-400 font-medium">
+              <Star className="w-3 h-3 text-amber-400 fill-amber-400" /> {product.rating} ({product.reviews} reseñas)
+            </span>
+          </div>
+
+          {/* Descripción */}
+          <div className="px-6 pt-3 pb-4">
+            <p className="text-slate-300 text-sm leading-relaxed">{product.description}</p>
+          </div>
+
+          {/* Precio */}
+          <div className="px-6 pb-5 flex items-baseline gap-2">
+            <span className="text-2xl font-black text-white">S/ {product.price.toFixed(2)}</span>
+            <span className="text-sm text-slate-500 line-through">S/ {product.originalPrice.toFixed(2)}</span>
+            <span className="text-xs font-bold text-emerald-400 ml-1">{discount}% OFF</span>
+          </div>
+
+          {/* Divisor */}
+          <div className="mx-6 border-t border-slate-800 mb-5" />
+
+          {/* ── Botones Neón ── */}
+          <div className="px-6 pb-6 space-y-3">
+            {/* Botón principal: abrir pantalla completa (gratis) o desbloquear VIP */}
+            <button
+              onClick={handleViewCode}
+              className="w-full py-3.5 rounded-2xl border border-cyan-500/70 bg-cyan-500/5 text-cyan-400 font-bold text-sm tracking-wide flex items-center justify-center gap-2 transition-all duration-200 hover:bg-cyan-500/15 hover:border-cyan-400 shadow-[0_0_15px_rgba(6,182,212,0.2)] hover:shadow-[0_0_28px_rgba(6,182,212,0.45)]"
+            >
+              <span className="font-mono">&lt;/&gt;</span>
+              {product.isVIP ? 'ADQUIRIR CÓDIGO FUENTE' : 'ABRIR PANTALLA COMPLETA'}
+              {product.isVIP && <Lock className="w-3.5 h-3.5 opacity-50" />}
+            </button>
+
+            {/* DESCARGAR HTML — verde */}
+            <button
+              onClick={handleDownload}
+              className="w-full py-3.5 rounded-2xl border border-emerald-500/70 bg-emerald-500/5 text-emerald-400 font-bold text-sm tracking-wide flex items-center justify-center gap-2 transition-all duration-200 hover:bg-emerald-500/15 hover:border-emerald-400 shadow-[0_0_15px_rgba(34,197,94,0.2)] hover:shadow-[0_0_28px_rgba(34,197,94,0.45)]"
+            >
+              ↓ DESCARGAR HTML
+              {product.isVIP && <Lock className="w-3.5 h-3.5 opacity-50" />}
+            </button>
+
+            {/* COMPARTIR — verde WhatsApp */}
+            <button
+              onClick={handleShare}
+              className="w-full py-3.5 rounded-2xl border border-emerald-500/70 bg-emerald-600/10 text-emerald-400 font-bold text-sm tracking-wide flex items-center justify-center gap-2 transition-all duration-200 hover:bg-emerald-600/20 hover:border-emerald-400 shadow-[0_0_15px_rgba(34,197,94,0.2)] hover:shadow-[0_0_28px_rgba(34,197,94,0.45)]"
+            >
+              <MessageCircle className="w-4 h-4" /> COMPARTIR
+            </button>
+          </div>
+        </div>
+
+        {/* Rating debajo de la tarjeta */}
+        <div className="mt-6 flex items-center justify-center gap-1.5">
+          {[...Array(5)].map((_, i) => <Star key={i} className="w-3.5 h-3.5 fill-amber-400 text-amber-400" />)}
+          <span className="text-slate-500 text-xs ml-1">{product.rating}/5 — {product.reviews} clientes satisfechos</span>
+        </div>
+      </div>
+    </div>
+  )
+}
+
+/* ═══════════════════════════════════════════════════════════
+   VIPModal — Modal de Acceso Premium VIP
+   Fondo oscuro + borde dorado brillante + crown + WhatsApp CTA
+═══════════════════════════════════════════════════════════ */
+function VIPModal({ product, onClose }) {
+  const handleBuy = () => {
+    const msg = `¡Hola! Soy un cliente VIP. Deseo adquirir el acceso premium al código ${product.title}. Mi método de pago preferido es Yape o BCP.`
+    window.open(`https://wa.me/51900123456?text=${encodeURIComponent(msg)}`, '_blank')
+  }
+
+  return (
+    <div
+      className="fixed inset-0 z-[70] bg-black/75 backdrop-blur-sm flex items-center justify-center p-4"
+      onClick={onClose}
+    >
+      <div
+        className="bg-slate-900 border border-amber-500/50 rounded-3xl p-8 max-w-sm w-full text-center shadow-[0_0_30px_rgba(234,179,8,0.35)] animate-fade-in-up"
+        onClick={e => e.stopPropagation()}
+      >
+        {/* Corona */}
+        <div className="text-6xl mb-3 drop-shadow-[0_0_18px_rgba(234,179,8,0.7)]">👑</div>
+
+        {/* Título con text-shadow dorado */}
+        <h2
+          className="text-xl font-black text-amber-400 uppercase tracking-widest mb-1"
+          style={{ textShadow: '0 0 20px rgba(234,179,8,0.8), 0 0 40px rgba(234,179,8,0.4)' }}
+        >
+          🔓 ACCESO PREMIUM
+        </h2>
+        <p className="text-amber-500/70 text-xs font-bold mb-5 tracking-wide">{product.title}</p>
+
+        {/* Divisor dorado */}
+        <div className="w-16 h-px bg-amber-500/30 mx-auto mb-5" />
+
+        {/* Texto persuasivo */}
+        <p className="text-slate-300 text-sm leading-relaxed mb-2">
+          ¿Quieres obtener este código premium? Contáctame por WhatsApp para recibir el acceso completo para clientes VIP.
+        </p>
+        <p className="text-emerald-400 text-sm font-semibold mb-7">✅ Compra segura y verificada.</p>
+
+        {/* Botones de acción */}
+        <div className="space-y-3">
+          <button
+            onClick={handleBuy}
+            className="w-full py-3.5 rounded-2xl bg-emerald-500 hover:bg-emerald-400 text-white font-bold text-sm flex items-center justify-center gap-2 transition-all shadow-[0_0_20px_rgba(34,197,94,0.5)] hover:shadow-[0_0_32px_rgba(34,197,94,0.7)]"
+          >
+            <MessageCircle className="w-4 h-4 fill-white" /> Comprar
+          </button>
+          <button
+            onClick={onClose}
+            className="w-full py-3 rounded-2xl bg-slate-800 hover:bg-slate-700/80 text-slate-400 hover:text-slate-200 font-bold text-sm flex items-center justify-center gap-2 transition-all border border-slate-700/60"
+          >
+            <X className="w-4 h-4" /> Cancelar
+          </button>
+        </div>
+      </div>
+    </div>
+  )
+}
+
 export default function App() {
   const [cartItems, setCartItems] = useState([])
   const [activeTab, setActiveTab] = useState('Más vendidos')
@@ -292,10 +653,9 @@ export default function App() {
   const [favorites, setFavorites] = useState([])
   const [favoritesOpen, setFavoritesOpen] = useState(false)
 
-  // Countdown timer hooks
-  const [hours, setHours] = useState(23)
-  const [minutes, setMinutes] = useState(58)
-  const [seconds, setSeconds] = useState(45)
+  // Vista de detalle y modal VIP
+  const [detailProduct, setDetailProduct] = useState(null)
+  const [vipModalProduct, setVipModalProduct] = useState(null)
 
   // Page loading states
   const [loading, setLoading] = useState(true)
@@ -313,21 +673,8 @@ export default function App() {
       }, 500) // matches transition duration
     }, 1500)
 
-    const timer = setInterval(() => {
-      setSeconds(prev => {
-        if (prev > 0) return prev - 1
-        setMinutes(m => {
-          if (m > 0) return m - 1
-          setHours(h => (h > 0 ? h - 1 : 23))
-          return 59
-        })
-        return 59
-      })
-    }, 1000)
-
     return () => {
       clearTimeout(loadTimeout)
-      clearInterval(timer)
     }
   }, [])
 
@@ -455,6 +802,12 @@ export default function App() {
       galleryRef.current.scrollBy({ left: scrollAmount, behavior: 'smooth' })
     }
   }
+
+  // Detalle de producto y modal VIP
+  const handleOpenProductDetail = (prod) => setDetailProduct(prod)
+  const handleCloseProductDetail = () => setDetailProduct(null)
+  const handleOpenVIPModal = (prod) => setVipModalProduct(prod)
+  const handleCloseVIPModal = () => setVipModalProduct(null)
 
   return (
     <div className="min-h-screen flex flex-col font-sans select-none antialiased bg-white text-slate-800">
@@ -677,7 +1030,7 @@ export default function App() {
               <div className="space-y-3 max-h-60 overflow-y-auto no-scrollbar">
                 {PRODUCTS.filter(p => favorites.includes(p.id)).map(fav => (
                   <div key={fav.id} className="flex items-center justify-between space-x-3 border-b border-slate-50 pb-2">
-                    <img src={fav.image} alt={fav.title} className="w-10 h-10 object-cover rounded-lg" />
+                    <img src={fav.image} alt={fav.title} loading="lazy" className="w-10 h-10 object-cover rounded-lg" />
                     <div className="flex-1 text-left">
                       <p className="text-xs font-bold text-slate-800 line-clamp-1 leading-snug">{fav.title}</p>
                       <p className="text-xs text-[#FF5A6F] font-extrabold mt-0.5">S/ {fav.price.toFixed(2)}</p>
@@ -911,31 +1264,29 @@ export default function App() {
                       <Heart className={`w-4 h-4 ${isFav ? 'text-[#FF5A6F] fill-[#FF5A6F]' : ''}`} />
                     </button>
 
-                    <div className="relative bg-slate-900 overflow-hidden" style={{ aspectRatio: '4/3' }}>
+                    {/* OPTIMIZACIÓN 1: miniatura estática + icono Play en hover
+                        El iframe PESADO solo se carga al abrir el modal de Vista Previa */}
+                    <div className="relative bg-slate-900 overflow-hidden group/thumb" style={{ aspectRatio: '4/3' }}>
                       {prod.badge && (
                         <span className={`absolute top-3 left-3 z-10 text-[9px] font-extrabold uppercase text-white px-2 py-0.5 rounded-md ${prod.badgeColor}`}>
                           {prod.badge}
                         </span>
                       )}
-                      {/* Mini iframe preview — página HTML en vivo escalada */}
-                      <iframe
-                        src={import.meta.env.BASE_URL.replace(/\/$/, '') + prod.previewHtml}
-                        title={prod.title}
-                        scrolling="no"
-                        tabIndex={-1}
-                        style={{
-                          position: 'absolute',
-                          top: 0,
-                          left: 0,
-                          width: '960px',
-                          height: '720px',
-                          transform: 'scale(0.3125)',
-                          transformOrigin: 'top left',
-                          pointerEvents: 'none',
-                          border: 'none',
-                          background: '#000',
-                        }}
+                      {/* Thumbnail estática (lazy) */}
+                      <img
+                        src={prod.image.startsWith('http') ? prod.image : import.meta.env.BASE_URL.replace(/\/$/, '') + prod.image}
+                        alt={prod.title}
+                        loading="lazy"
+                        className="w-full h-full object-cover transition-transform duration-500 group-hover/thumb:scale-105"
                       />
+                      {/* Overlay oscuro en hover */}
+                      <div className="absolute inset-0 bg-black/30 opacity-0 group-hover/thumb:opacity-100 transition-opacity duration-300 pointer-events-none" />
+                      {/* Icono Play superpuesto (visible en hover) */}
+                      <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover/thumb:opacity-100 transition-opacity duration-300 pointer-events-none">
+                        <div className="w-12 h-12 bg-white/90 backdrop-blur-sm rounded-full flex items-center justify-center shadow-xl">
+                          <Play className="w-5 h-5 text-[#FF5A6F] fill-[#FF5A6F] ml-0.5" />
+                        </div>
+                      </div>
                     </div>
 
                     <div className="p-4 flex-1 flex flex-col justify-between text-left">
@@ -966,9 +1317,9 @@ export default function App() {
 
                         {/* Two action buttons: Ver + Comprar */}
                         <div className="grid grid-cols-2 gap-1.5">
-                          {/* Ver — abre la página HTML del detalle */}
+                          {/* Ver — abre la vista de detalle del producto */}
                           <button
-                            onClick={() => setPreviewImage(import.meta.env.BASE_URL.replace(/\/$/, '') + prod.previewHtml)}
+                            onClick={() => handleOpenProductDetail(prod)}
                             className="py-2 bg-slate-50 border border-slate-200 hover:border-[#FF5A6F]/50 text-slate-600 hover:text-[#FF5A6F] rounded-xl text-[11px] font-bold transition-all flex items-center justify-center gap-1"
                           >
                             <Eye className="w-3.5 h-3.5" />
@@ -1136,6 +1487,7 @@ export default function App() {
                   <img
                     src="https://images.unsplash.com/photo-1518199266791-5375a83190b7?auto=format&fit=crop&w=600&q=80"
                     alt="Video preview mockup"
+                    loading="lazy"
                     className="w-full h-full object-cover opacity-80"
                   />
 
@@ -1328,6 +1680,7 @@ export default function App() {
                 <img
                   src={photo}
                   alt={`Detalle entregado ${idx + 1}`}
+                  loading="lazy"
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                 />
                 <div className="absolute inset-0 bg-[#FF5A6F]/10 opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none" />
@@ -1375,6 +1728,7 @@ export default function App() {
                     <img
                       src={test.avatar}
                       alt={test.name}
+                      loading="lazy"
                       className="w-10 h-10 rounded-full object-cover border border-white shadow-sm"
                     />
                     <div className="leading-none text-left">
@@ -1403,6 +1757,7 @@ export default function App() {
                 <img
                   src={TESTIMONIALS[testimonialIndex].avatar}
                   alt={TESTIMONIALS[testimonialIndex].name}
+                  loading="lazy"
                   className="w-10 h-10 rounded-full object-cover border border-white shadow-sm"
                 />
                 <div className="leading-none text-left">
@@ -1459,25 +1814,8 @@ export default function App() {
 
             {/* Timer boxes & button */}
             <div className="flex flex-col sm:flex-row items-center gap-6 z-10 w-full lg:w-auto shrink-0">
-              <div className="flex items-center space-x-3.5">
-                {/* Hours */}
-                <div className="flex flex-col items-center">
-                  <div className="w-14 h-14 bg-white border border-slate-150 rounded-2xl flex items-center justify-center font-black text-xl text-slate-800 shadow-sm leading-none">{hours}</div>
-                  <span className="text-[9px] font-extrabold text-slate-400 mt-1 uppercase tracking-wider">HORAS</span>
-                </div>
-                <span className="font-extrabold text-slate-400 text-xl leading-none -mt-4">:</span>
-                {/* Minutes */}
-                <div className="flex flex-col items-center">
-                  <div className="w-14 h-14 bg-white border border-slate-150 rounded-2xl flex items-center justify-center font-black text-xl text-slate-800 shadow-sm leading-none">{minutes}</div>
-                  <span className="text-[9px] font-extrabold text-slate-400 mt-1 uppercase tracking-wider">MINUTOS</span>
-                </div>
-                <span className="font-extrabold text-slate-400 text-xl leading-none -mt-4">:</span>
-                {/* Seconds */}
-                <div className="flex flex-col items-center">
-                  <div className="w-14 h-14 bg-white border border-slate-150 rounded-2xl flex items-center justify-center font-black text-xl text-slate-800 shadow-sm leading-none">{seconds}</div>
-                  <span className="text-[9px] font-extrabold text-slate-400 mt-1 uppercase tracking-wider">SEGUNDOS</span>
-                </div>
-              </div>
+              {/* OPTIMIZACIÓN 2: componente aislado — solo él se re-renderiza cada segundo */}
+              <CountdownTimer />
 
               <button
                 onClick={() => handleOpenDetail(PRODUCTS[0])}
@@ -1734,6 +2072,7 @@ export default function App() {
               <img
                 src="https://images.unsplash.com/photo-1518199266791-5375a83190b7?auto=format&fit=crop&w=800&q=80"
                 alt="Fondo de la dedicatoria en video"
+                loading="lazy"
                 className={`w-full h-full object-cover transition-opacity duration-300 ${isPlaying ? 'opacity-80' : 'opacity-40'}`}
               />
 
@@ -1833,7 +2172,7 @@ export default function App() {
             {/* Form */}
             <form onSubmit={handleAddCustomizedToCart} className="p-6 space-y-4">
               <div className="flex items-center space-x-4 border-b border-slate-100 pb-4 mb-4">
-                <img src={customizingProduct.image} alt={customizingProduct.title} className="w-16 h-16 object-cover rounded-xl shadow-xs" />
+                <img src={customizingProduct.image} alt={customizingProduct.title} loading="lazy" className="w-16 h-16 object-cover rounded-xl shadow-xs" />
                 <div>
                   <h3 className="font-bold text-slate-800 text-base leading-snug">{customizingProduct.title}</h3>
                   <p className="text-xs text-[#FF5A6F] font-extrabold mt-1">S/ {customizingProduct.price.toFixed(2)}</p>
@@ -1963,7 +2302,7 @@ export default function App() {
                       key={item.id}
                       className="bg-white border border-slate-100 p-4 rounded-2xl shadow-xs flex items-start space-x-3.5 relative group"
                     >
-                      <img src={item.image} alt={item.title} className="w-16 h-16 object-cover rounded-xl" />
+                      <img src={item.image} alt={item.title} loading="lazy" className="w-16 h-16 object-cover rounded-xl" />
 
                       <div className="flex-1 text-left">
                         <h4 className="font-bold text-xs text-slate-800 pr-4 leading-snug line-clamp-1">{item.title}</h4>
@@ -2056,6 +2395,24 @@ export default function App() {
           </div>
         </div>
       )}
+      {/* ── Vista de Detalle del Producto ── */}
+      {detailProduct && (
+        <ProductDetailView
+          product={detailProduct}
+          onClose={handleCloseProductDetail}
+          onVIP={handleOpenVIPModal}
+          onPreview={setPreviewImage}
+        />
+      )}
+
+      {/* ── Modal de Acceso Premium VIP ── */}
+      {vipModalProduct && (
+        <VIPModal
+          product={vipModalProduct}
+          onClose={handleCloseVIPModal}
+        />
+      )}
+
       {/* HTML Preview Modal */}
       {previewImage && (
         <div
