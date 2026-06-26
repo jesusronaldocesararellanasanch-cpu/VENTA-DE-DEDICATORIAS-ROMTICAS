@@ -642,9 +642,13 @@ export default function App() {
       {loading && (
         <div className={`fixed inset-0 z-50 flex flex-col items-center justify-center bg-white transition-opacity duration-500 ${loadingFadeOut ? 'opacity-0' : 'opacity-100'}`}>
           <div className="flex flex-col items-center space-y-4">
-            {/* Pulsing heart logo icon */}
-            <div className="p-4 bg-[#FFF0F2] rounded-3xl animate-preloader-pulse">
-              <Heart className="w-14 h-14 text-[#FF5A6F] fill-[#FF5A6F]" />
+            {/* Custom GIF loading animation */}
+            <div className="flex items-center justify-center mb-2">
+              <img 
+                src="https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExcTA2eWpwanFmaTZ3ZXZ5YWd3anAxbHY0Z2gxaXRqaGowMDE5OHVocCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/2WDVSZWxbgJFMxekJG/giphy.gif" 
+                alt="Cargando animación..." 
+                className="w-32 h-32 object-contain" 
+              />
             </div>
             
             {/* Pulsing text info */}
