@@ -1071,9 +1071,9 @@ export default function App() {
           </div>
 
           {/* Catalog Layout */}
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8">
+          <div className="w-full">
             {/* Products grid */}
-            <div className="lg:col-span-9 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
               {PRODUCTS.map((prod, idx) => {
                 const isFav = favorites.includes(prod.id)
                 return (
@@ -1167,46 +1167,6 @@ export default function App() {
                   </div>
                 )
               })}
-            </div>
-
-            {/* Checklist Column */}
-            <div className="lg:col-span-3 bg-white border border-slate-200 rounded-3xl p-6 flex flex-col justify-between text-left shadow-xs">
-              <div className="space-y-4">
-                <h3 className="text-sm font-bold text-slate-900 uppercase tracking-wider border-b border-slate-100 pb-2">Ventajas Clave</h3>
-                <div className="space-y-3.5">
-                  <div className="flex items-start space-x-2.5">
-                    <Check className="w-4 h-4 text-emerald-500 shrink-0 mt-0.5" />
-                    <p className="text-xs text-slate-600 leading-relaxed font-medium">
-                      <strong className="font-semibold text-slate-800 block">Entrega inmediata</strong> por email o WhatsApp.
-                    </p>
-                  </div>
-                  <div className="flex items-start space-x-2.5">
-                    <Check className="w-4 h-4 text-emerald-500 shrink-0 mt-0.5" />
-                    <p className="text-xs text-slate-600 leading-relaxed font-medium">
-                      <strong className="font-semibold text-slate-800 block">Personalización total</strong> Con fotos, textos, música y más.
-                    </p>
-                  </div>
-                  <div className="flex items-start space-x-2.5">
-                    <Check className="w-4 h-4 text-emerald-500 shrink-0 mt-0.5" />
-                    <p className="text-xs text-slate-600 leading-relaxed font-medium">
-                      <strong className="font-semibold text-slate-800 block">Vista previa</strong> Revisa tu detalle antes de pagar.
-                    </p>
-                  </div>
-                  <div className="flex items-start space-x-2.5">
-                    <Check className="w-4 h-4 text-emerald-500 shrink-0 mt-0.5" />
-                    <p className="text-xs text-slate-600 leading-relaxed font-medium">
-                      <strong className="font-semibold text-slate-800 block">Soporte 24/7</strong> Te ayudamos en todo momento.
-                    </p>
-                  </div>
-                </div>
-              </div>
-
-              <button
-                onClick={() => handleOpenDetail(PRODUCTS[0])}
-                className="mt-6 w-full py-3 bg-[#FF5A6F] hover:bg-[#ff465d] text-white rounded-xl text-xs font-bold transition-all shadow-md flex items-center justify-center space-x-1"
-              >
-                <span>Crear mi detalle ahora ⚡</span>
-              </button>
             </div>
           </div>
         </div>
